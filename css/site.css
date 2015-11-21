@@ -1,3 +1,13 @@
+.clearfix:before {
+		content: "";
+		display: table;
+	}
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 .brand h1 span {
 	display: inline-block;
 	font-weight: 700;

@@ -35,9 +35,12 @@
 					<p><input type="text" placeholder="Search (by parcel name, price, wieght)"></p>
 				</form>
 			</div>
-			<div class="list-group">
-				<ul>
-					<li class="list-group-item" ng-repeat="parcel in parcels_data"><p class="col-lg-8">{{parcel.name}}</p><span class="col-lg-3">{{parcel.price}}</span><a href="#" class="col-lg-1">></a></li>
+			<div >
+				<ul class="list-group">
+					<li class="list-group-item clearfix" ng-repeat="parcel in parcels_data">
+						<div class="col-lg-8">{{parcel.name}}</div><div class="col-lg-3">{{parcel.price}}</div>
+						<a data-name="{{parcel.name}}" href="#" class="col-lg-1">></a>
+					</li>
 				</ul>
 			</div>
 			<div class="sort">
