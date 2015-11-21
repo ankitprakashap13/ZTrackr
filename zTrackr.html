@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/site.css" />
+	<script type="text/javascript" src="../angular.min-1.2.15.js"></script>
+	<script type="text/javascript" src="../jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid" ng-app="myApp" ng-controller="mainController">
+	<div class="jumbotron">
+		<div class="container">
+			<div class="col-lg-6">
+				<div class="brand"><h1><span>Z</span> Trackr</h1> <p>- live tracking made easy!</p></div>
+			</div>
+			<div class="col-lg-5">
+				<div class="stats">
+					<div class="col-lg-6">
+						<p>API Hits: <span>{{api_hits.api_hits}}</span></p>
+					</div>
+					<div class="col-lg-6">
+						<p>Total Parcels: <span></span></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-1 loader">Loader</div>
+		</div>
+	</div>
+	<div class="container content">
+		<div class="col-lg-6 column-left">
+			<div class="search">
+				<form class="form">
+					<p><input type="text" placeholder="Search (by parcel name, price, wieght)"></p>
+				</form>
+			</div>
+			<div class="list-group">
+				<ul>
+					<li class="list-group-item" ng-repeat="parcel in parcels_data"><p class="col-lg-8">{{parcel.name}}</p><span class="col-lg-3">{{parcel.price}}</span><a href="#" class="col-lg-1">></a></li>
+				</ul>
+			</div>
+			<div class="sort">
+				<div class="col-lg-4">Sort by</div>
+				<div class="col-lg-8">
+					<div class="col-lg-6"><a href="">Value</a></div>
+					<div class="col-lg-6"><a href="">Weight</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 column-right">
+			<div class="parcel_details">
+				<div class="col-lg-6">
+					<img src="" />
+					<div class="eta"></div>
+				</div>
+				<div class="col-lg-6">
+					<h4></h4>
+				</div>
+			</div>
+			<div class="location">
+				<h4>Current Location [Live Update]</h4>
+				<div class="map"></div>
+				<div class="like-share">
+					<a href="#">Like</a>
+					<a href="#">Share</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!-- Module -->
+	<script type="text/javascript" src="scripts/module.js"></script>
+	<!-- Main Controller -->
+	<script type="text/javascript" src="scripts/mainController.js"></script>
+</body>
+</html>

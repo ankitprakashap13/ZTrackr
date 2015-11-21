@@ -1,0 +1,23 @@
+.brand h1 span {
+	display: inline-block;
+	font-weight: 700;
+	padding: 0 14px;
+	border-radius: 5px;
+	border: 2px solid #848587;
+	line-height: 1;
+}
+.brand h1 {
+	float: left;
+	color: #80C41E;
+}
+.brand p {
+	float: left;
+	margin: 50px 0 0 30px;
+	color: #5ABBB5;
+}
+.search p input{
+	width: 100%;
+}
+.column-left{
+	border-right: 1px solid #333;
+}
