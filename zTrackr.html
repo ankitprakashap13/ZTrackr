@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.css" />
 	<link rel="stylesheet" type="text/css" href="css/site.css" />
 	<script type="text/javascript" src="scripts/angular.min-1.2.15.js"></script>
 	<script type="text/javascript" src="scripts/jquery-1.11.3.min.js"></script>
@@ -57,21 +58,73 @@
 					<img src="" />
 					<div class="eta"></div>
 				</div>
-				<div class="col-lg-6">
-					<h4></h4>
+				<div class="col-lg-6 right-panel-data">
+					<div class='col-xs-12 header-name'>Airwick Aroma oil</div>
+					<div class='col-xs-6'>
+						<div class='right-panel-row'>
+							<i class="fa fa-cart-arrow-down"></i>Household
+						</div>
+						<div class='right-panel-row'>
+							<i class="fa fa-database"></i>0.6 kg
+						</div>
+						<div class='right-panel-row'>
+							<i class="fa fa-book"></i>989977979
+						</div>
+					</div>
+					<div class='col-xs-6'>
+						<div class='right-panel-row'>
+							<i class="fa fa-money"></i></h4>274
+						</div>
+						<div class='right-panel-row'>
+							<span style="font-weight: bold;">Q</span>0.6 kg
+						</div>
+						<div class='right-panel-row'>
+							<span style="display: inline-block; width: 20px; height: 10px; background-color: #555555"></span>#555555
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="location">
 				<h4>Current Location [Live Update]</h4>
-				<div class="map"></div>
+				<div id="map"></div>
+				<div id='refresh-map'><a href="javascript:void(0);"><i class='fa fa-refresh'></i></a></div>
 				<div class="like-share">
-					<a href="#">Like</a>
-					<a href="#">Share</a>
+					<a class="btn btn-primary" href="#"><i class='fa fa-thumbs-up'></i> Like</a>
+					<a class="btn btn-primary" href="#"><i class='fa fa-share-alt'></i> Share</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	</div>
+	<div class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </div>
+	<!-- initialise google maps -->
+    <script>
+	function initMap() {
+	  var myLatLng = {lat: -25.363, lng: 131.044};
+
+	  var mapOptions = {
+	    zoom: 8,
+	    center: myLatLng,
+	    disableDefaultUI: true,
+	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	  }
+
+	  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+	  var marker = new google.maps.Marker({
+	    position: myLatLng,
+	    map: map,
+	    title: 'Current location'
+	  });
+	}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=false&callback=initMap"
+        async defer></script>
 
 	<!-- Module -->
 	<script type="text/javascript" src="scripts/module.js"></script>
