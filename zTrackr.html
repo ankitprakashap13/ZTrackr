@@ -22,7 +22,7 @@
 						<p>API Hits: <span>{{api_hits.api_hits}}</span></p>
 					</div>
 					<div class="col-lg-6">
-						<p>Total Parcels: <span></span></p>
+						<p>Total Parcels: <span>{{parcel.length}}</span></p>
 					</div>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 					<p><input type="text" placeholder="Search (by parcel name, price, wieght)" ng-model="parcel"></p>
 				</form>
 			</div>
-			<div >
+			<div id="parcels_list">
 				<ul class="list-group">
 					<li class="list-group-item clearfix" ng-repeat="parcel in parcels_data | filter: parcel.name | filter: parcel.price | filter: weight">
 						<div class="col-lg-8">{{parcel.name}}</div><div class="col-lg-3">{{parcel.price}}</div>
@@ -55,31 +55,31 @@
 		<div class="col-lg-6 column-right">
 			<div class="parcel_details">
 				<div class="col-lg-6">
-					<img src="" />
-					<div class="eta"></div>
+					<img id="parcel_image" src="http://n2.sdlcdn.com/imgs/a/r/o/Airwick-Aroma-Oil-Refill-Pack-SDL286969364-12-2ac2e.jpg" />
+					<div id="parcel_date" class="eta" id="parcel_date"></div>
 				</div>
 				<div class="col-lg-6 right-panel-data">
-					<div class='col-xs-12 header-name'>Airwick Aroma oil</div>
-					<div class='col-xs-6'>
+					<div id="parcel_name" class='col-xs-12 header-name'>Airwick Aroma oil</div>
+					<div class='col-lg-7'>
 						<div class='right-panel-row'>
-							<i class="fa fa-cart-arrow-down"></i>Household
+							<i class="fa fa-cart-arrow-down"></i><span id="parcel_type">Household</span>
 						</div>
 						<div class='right-panel-row'>
-							<i class="fa fa-database"></i>0.6 kg
+							<i class="fa fa-database"></i><span id="parcel_weight">0.6 kg</span>
 						</div>
 						<div class='right-panel-row'>
-							<i class="fa fa-book"></i>989977979
+							<i class="fa fa-book"></i><span id="parcel_phone">989977979</span>
 						</div>
 					</div>
-					<div class='col-xs-6'>
+					<div class='col-lg-5'>
 						<div class='right-panel-row'>
-							<i class="fa fa-money"></i></h4>274
+							<i class="fa fa-money"></i><span id="parcel_price">274</span>
 						</div>
 						<div class='right-panel-row'>
-							<span style="font-weight: bold;">Q</span>0.6 kg
+							<span style="font-weight: bold;">Q</span><span id="parcel_quantity">0.6 kg</span>
 						</div>
 						<div class='right-panel-row'>
-							<span style="display: inline-block; width: 20px; height: 10px; background-color: #555555"></span>#555555
+							<span id="parcel_color" style="display: inline-block; width: 20px; height: 10px; background-color: #555555"></span><span>Color</span>
 						</div>
 					</div>
 				</div>
@@ -101,31 +101,9 @@
         <p class="text-muted">Place sticky footer content here.</p>
       </div>
     </div>
-	<!-- initialise google maps -->
-    <script>
-	function initMap() {
-	  var myLatLng = {lat: -25.363, lng: 131.044};
 
-	  var mapOptions = {
-	    zoom: 8,
-	    center: myLatLng,
-	    disableDefaultUI: true,
-	    mapTypeId: google.maps.MapTypeId.ROADMAP
-	  }
-
-	  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-	  var marker = new google.maps.Marker({
-	    position: myLatLng,
-	    map: map,
-	    title: 'Current location'
-	  });
-	}
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?signed_in=false&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=false"
         async defer></script>
-
 	<!-- Module -->
 	<script type="text/javascript" src="scripts/module.js"></script>
 	<!-- Main Controller -->
