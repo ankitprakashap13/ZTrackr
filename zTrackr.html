@@ -33,12 +33,12 @@
 		<div class="col-lg-6 column-left">
 			<div class="search">
 				<form class="form">
-					<p><input type="text" placeholder="Search (by parcel name, price, wieght)"></p>
+					<p><input type="text" placeholder="Search (by parcel name, price, wieght)" ng-model="parcel"></p>
 				</form>
 			</div>
 			<div >
 				<ul class="list-group">
-					<li class="list-group-item clearfix" ng-repeat="parcel in parcels_data">
+					<li class="list-group-item clearfix" ng-repeat="parcel in parcels_data | filter: parcel.name | filter: parcel.price | filter: weight">
 						<div class="col-lg-8">{{parcel.name}}</div><div class="col-lg-3">{{parcel.price}}</div>
 						<a data-name="{{parcel.name}}" href="#" class="col-lg-1">></a>
 					</li>
@@ -47,8 +47,8 @@
 			<div class="sort">
 				<div class="col-lg-4">Sort by</div>
 				<div class="col-lg-8">
-					<div class="col-lg-6"><a href="">Value</a></div>
-					<div class="col-lg-6"><a href="">Weight</a></div>
+					<div class="col-lg-6"><a href="#" ng-click="reverse=false;order('price', false)">Value</a></div>
+					<div class="col-lg-6"><a href="#" ng-click="reverse=false;order('weight', false)">Weight</a></div>
 				</div>
 			</div>
 		</div>
